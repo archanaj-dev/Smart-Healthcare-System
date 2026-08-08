@@ -1,0 +1,161 @@
+.report-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.report-card,
+.report-history {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.report-card h1 {
+  margin: 0;
+  color: #1976d2;
+  text-align: center;
+}
+
+.report-card > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.report-card form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.report-card input,
+.report-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.report-card textarea {
+  resize: vertical;
+}
+
+.report-card input:focus,
+.report-card textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.report-card form textarea,
+.report-card form button {
+  grid-column: span 2;
+}
+
+.report-card button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.report-card button:hover {
+  background: #125ca5;
+}
+
+.report-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.report-history h2 {
+  color: #1976d2;
+  margin-top: 0;
+}
+
+.report-search {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.report-table-container {
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.report-table th {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.report-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.report-table tr:hover {
+  background: #f8fbff;
+}
+
+.delete-report-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-report-btn:hover {
+  background: #c62828;
+}
+
+.report-footer {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+
+  .report-page {
+    padding: 15px;
+  }
+
+  .report-card,
+  .report-history {
+    padding: 20px;
+  }
+
+  .report-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .report-card form textarea,
+  .report-card form button {
+    grid-column: span 1;
+  }
+
+}

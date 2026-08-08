@@ -1,0 +1,109 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef5ff;
+}
+
+.appointment-container{
+    width:95%;
+    margin:40px auto;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.appointment-container h1{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:30px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+    padding:15px;
+    font-size:16px;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+tr:hover{
+    background:#f5f9ff;
+}
+
+.approved{
+    color:#198754;
+    font-weight:bold;
+}
+
+.rejected{
+    color:#dc3545;
+    font-weight:bold;
+}
+
+.pending{
+    color:#fd7e14;
+    font-weight:bold;
+}
+
+.approve-btn{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    margin:3px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.approve-btn:hover{
+    background:#157347;
+}
+
+.reject-btn{
+    background:#ffc107;
+    color:black;
+    border:none;
+    padding:8px 15px;
+    margin:3px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.reject-btn:hover{
+    background:#e0a800;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    margin:3px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#bb2d3b;
+}
+
+@media(max-width:900px){
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+}

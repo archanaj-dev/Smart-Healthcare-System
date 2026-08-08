@@ -1,0 +1,61 @@
+.symptom-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#eef5ff;
+}
+
+.symptom-card{
+    width:600px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.symptom-card h1{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.symptom-card p{
+    color:#555;
+    margin-bottom:25px;
+}
+
+.symptom-card textarea{
+    width:100%;
+    height:160px;
+    padding:15px;
+    border:2px solid #2563eb;
+    border-radius:10px;
+    resize:none;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.symptom-card button{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:15px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.symptom-card button:hover{
+    background:#1d4ed8;
+}
+
+.result-box{
+    margin-top:30px;
+    background:#f5faff;
+    border-left:6px solid #2563eb;
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+}

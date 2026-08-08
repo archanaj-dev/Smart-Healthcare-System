@@ -1,0 +1,112 @@
+.prescription-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 30px;
+}
+
+.prescription-card,
+.history-card {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.prescription-card h1,
+.history-card h2 {
+  color: #1976d2;
+}
+
+.prescription-card form {
+  display: grid;
+  gap: 15px;
+}
+
+.prescription-card input,
+.prescription-card textarea {
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.prescription-card button {
+  padding: 13px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.prescription-card button:hover {
+  background: #125ca5;
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.search-box {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.history-card {
+  overflow-x: auto;
+}
+
+.history-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-card th,
+.history-card td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.history-card th {
+  background: #1976d2;
+  color: white;
+}
+
+.history-card tr:hover {
+  background: #f5f9ff;
+}
+
+.delete-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+}
+
+@media (max-width: 700px) {
+  .prescription-page {
+    padding: 15px;
+  }
+
+  .prescription-card,
+  .history-card {
+    padding: 20px;
+  }
+}

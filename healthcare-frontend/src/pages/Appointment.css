@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.appointment-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#eef5ff;
+
+    padding:40px;
+}
+
+.appointment-card{
+
+    width:500px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+}
+
+.appointment-card h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+    font-size:34px;
+}
+
+.appointment-card p{
+
+    text-align:center;
+
+    color:gray;
+
+    margin-bottom:30px;
+}
+
+.appointment-card form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.appointment-card input,
+.appointment-card textarea{
+
+    padding:15px;
+
+    border:2px solid #dbeafe;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    transition:0.3s;
+}
+
+.appointment-card input:focus,
+.appointment-card textarea:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 8px rgba(37,99,235,0.2);
+
+}
+
+.appointment-card textarea{
+
+    resize:none;
+}
+
+.appointment-card button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.appointment-card button:hover{
+
+    background:#1d4ed8;
+
+    transform:scale(1.02);
+
+}
+.message{
+
+    margin-top:20px;
+
+    padding:14px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    border:1px solid #93c5fd;
+
+    animation:fadeIn .4s;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+.appointment-card select{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    border:2px solid #2563eb;
+    border-radius:10px;
+    font-size:16px;
+    background:white;
+    outline:none;
+}
