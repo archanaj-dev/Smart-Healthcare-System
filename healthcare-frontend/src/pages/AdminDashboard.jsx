@@ -20,22 +20,22 @@ function AdminDashboard() {
 
     try {
 
-      const patientRes = await fetch("http://127.0.0.1:8001/auth/users");
+      const patientRes = await fetch("http://127.0.0.1:8000/auth/users");
       const patientData = await patientRes.json();
 
-      const appointmentRes = await fetch("http://127.0.0.1:8001/appointment/list");
+      const appointmentRes = await fetch("http://127.0.0.1:8000/appointment/list");
       const appointmentData = await appointmentRes.json();
 
       let prescriptionData = [];
       let reportData = [];
 
       try {
-        const prescriptionRes = await fetch("http://127.0.0.1:8001/prescription/list");
+        const prescriptionRes = await fetch("http://127.0.0.1:8000/prescription/list");
         prescriptionData = await prescriptionRes.json();
       } catch {}
 
       try {
-        const reportRes = await fetch("http://127.0.0.1:8001/report/list");
+        const reportRes = await fetch("http://127.0.0.1:8000/report/list");
         reportData = await reportRes.json();
       } catch {}
 

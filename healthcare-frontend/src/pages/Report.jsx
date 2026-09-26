@@ -16,7 +16,7 @@ function Report() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/report/list"
+        "http://127.0.0.1:8000/report/list"
       );
 
       const data = await response.json();
@@ -49,7 +49,7 @@ function Report() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8001/report/delete/${id}`,
+        `http://127.0.0.1:8000/report/delete/${id}`,
         {
           method: "DELETE"
         }

@@ -13,7 +13,7 @@ function DoctorDashboard() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/doctor/appointments"
+        "http://127.0.0.1:8000/doctor/appointments"
       );
 
       const data = await response.json();
@@ -39,7 +39,7 @@ function DoctorDashboard() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8001/doctor/${action}/${id}`,
+        `http://127.0.0.1:8000/doctor/${action}/${id}`,
         {
           method: "PUT",
         }

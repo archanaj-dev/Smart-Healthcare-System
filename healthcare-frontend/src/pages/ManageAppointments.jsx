@@ -14,7 +14,7 @@ function ManageAppointments() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/manage-appointment/list"
+        "http://127.0.0.1:8000/manage-appointment/list"
       );
 
       const data = await response.json();
@@ -34,7 +34,7 @@ function ManageAppointments() {
     try {
 
       await fetch(
-        `http://127.0.0.1:8001/manage-appointment/approve/${id}`,
+        `http://127.0.0.1:8000/manage-appointment/approve/${id}`,
         {
           method: "PUT"
         }
@@ -55,7 +55,7 @@ function ManageAppointments() {
     try {
 
       await fetch(
-        `http://127.0.0.1:8001/manage-appointment/reject/${id}`,
+        `http://127.0.0.1:8000/manage-appointment/reject/${id}`,
         {
           method: "PUT"
         }
@@ -78,7 +78,7 @@ function ManageAppointments() {
     try {
 
       await fetch(
-        `http://127.0.0.1:8001/manage-appointment/delete/${id}`,
+        `http://127.0.0.1:8000/manage-appointment/delete/${id}`,
         {
           method: "DELETE"
         }

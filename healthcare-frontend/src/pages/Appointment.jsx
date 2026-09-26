@@ -29,7 +29,7 @@ function Appointment() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/doctor/list"
+        "http://127.0.0.1:8000/doctor/list"
       );
 
       const data = await response.json();
@@ -60,7 +60,7 @@ function Appointment() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/appointment/book",
+        "http://127.0.0.1:8000/appointment/book",
         {
           method: "POST",
           headers: {

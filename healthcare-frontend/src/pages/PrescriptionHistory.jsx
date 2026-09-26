@@ -1,83 +1,80 @@
-import { useEffect, useState } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function PrescriptionHistory() {
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
-  const [prescriptions, setPrescriptions] = useState([]);
+import PatientDashboard from "./pages/PatientDashboard";
+import DoctorDashboard from "./pages/DoctorDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 
-  useEffect(() => {
-    fetchPrescriptions();
-  }, []);
+import Appointment from "./pages/Appointment";
+import Profile from "./pages/Profile";
+import SymptomChecker from "./pages/SymptomChecker";
+import Prescription from "./pages/Prescription";
+import PrescriptionHistory from "./pages/PrescriptionHistory";
+import Reports from "./pages/Report";
 
-  const fetchPrescriptions = async () => {
+import ManageDoctors from "./pages/ManageDoctors";
+import ManagePatients from "./pages/ManagePatients";
+import ManageAppointments from "./pages/ManageAppointments";
+import Report from "./pages/Report";
 
-    try {
-
-      const response = await fetch(
-        "http://127.0.0.1:8000/prescription/list"
-      );
-
-      const data = await response.json();
-
-      setPrescriptions(data);
-
-    } catch (error) {
-
-      console.log(error);
-
-    }
-
-  };
+function App() {
 
   return (
 
-<div className="prescription-container">
+    <BrowserRouter>
 
-    <h1 className="prescription-title">
-        💊 Prescription History
-    </h1>
+      <Routes>
 
-    <div className="prescription-grid">
+        <Route path="/" element={<Home />} />
 
-        {prescriptions.length > 0 ? (
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-            prescriptions.map((item)=>(
+        <Route path="/patient" element={<PatientDashboard />} />
+        <Route path="/doctor" element={<DoctorDashboard />} />
+        <Route path="/admin" element={<AdminDashboard />} />
 
-                <div className="prescription-card" key={item.id}>
+        <Route path="/appointment" element={<Appointment />} />
 
-                    <h3>💊 Prescription</h3>
+        <Route path="/symptom" element={<SymptomChecker />} />
 
-                    <p><span>Patient :</span> {item.patient_name}</p>
+        <Route path="/prescription" element={<Prescription />} />
 
-                    <p><span>Doctor :</span> {item.doctor}</p>
+        <Route path="/report" element={<Report />} />
+        
+        <Route
+          path="/prescriptions"
+          element={<PrescriptionHistory />}
+        />
 
-                    <p><span>Medicine :</span> {item.medicine}</p>
+        <Route path="/reports" element={<Reports />} />
 
-                    <p><span>Morning :</span> {item.morning}</p>
+        <Route path="/profile" element={<Profile />} />
 
-                    <p><span>Afternoon :</span> {item.afternoon}</p>
+        <Route
+          path="/manage-doctors"
+          element={<ManageDoctors />}
+        />
 
-                    <p><span>Night :</span> {item.night}</p>
+        <Route
+          path="/manage-patients"
+          element={<ManagePatients />}
+        />
 
-                    <p><span>Days :</span> {item.days}</p>
+        <Route
+          path="/manage-appointments"
+          element={<ManageAppointments />}
+        />
 
-                    <p><span>Notes :</span> {item.notes}</p>
+      </Routes>
 
-                </div>
+    </BrowserRouter>
 
-            ))
-
-        ) : (
-
-            <h2>No Prescriptions Found</h2>
-
-        )}
-
-    </div>
-
-</div>
-
-);
+  );
 
 }
 
-export default PrescriptionHistory;

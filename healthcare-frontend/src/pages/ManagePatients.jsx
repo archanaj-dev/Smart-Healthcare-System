@@ -15,7 +15,7 @@ function ManagePatients() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/manage-patient/list"
+        "http://127.0.0.1:8000/manage-patient/list"
       );
 
       const data = await response.json();
@@ -45,7 +45,7 @@ function ManagePatients() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8001/manage-patient/delete/${id}`,
+        `http://127.0.0.1:8000/manage-patient/delete/${id}`,
         {
           method: "DELETE",
         }

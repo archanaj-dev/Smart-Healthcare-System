@@ -27,7 +27,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/manage-doctor/list"
+        "http://127.0.0.1:8000/manage-doctor/list"
       );
 
       const data = await response.json();
@@ -47,7 +47,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/prescription/list"
+        "http://127.0.0.1:8000/prescription/list"
       );
 
       const data = await response.json();
@@ -78,7 +78,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8001/prescription/add",
+        "http://127.0.0.1:8000/prescription/add",
         {
           method: "POST",
           headers: {
@@ -134,7 +134,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8001/prescription/delete/${id}`,
+        `http://127.0.0.1:8000/prescription/delete/${id}`,
         {
           method: "DELETE",
         }
