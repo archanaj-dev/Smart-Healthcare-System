@@ -1,270 +1,151 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Register.css";
 
 function Register() {
-
   const navigate = useNavigate();
 
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    password: "",
-    role: "patient",
-    dob: "",
-    gender: ""
-  });
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [dob, setDob] = useState("");
+  const [gender, setGender] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-
-  };
-
-  const handleRegister = async (e) => {
-
-    e.preventDefault();
-
-    setMessage("");
-    setLoading(true);
+  const handleRegister = async () => {
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !dob ||
+      !gender ||
+      !password
+    ) {
+      alert("Please fill all fields");
+      return;
+    }
 
     try {
-
       const response = await fetch(
-        "https://smart-healthcare-system-tkm2.onrender.com/auth/register",
+        "http://127.0.0.1:8000/auth/register",
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(form)
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            dob: dob,
+            gender: gender,
+            password: password,
+          }),
         }
       );
 
       const data = await response.json();
 
+      console.log("Status:", response.status);
+      console.log("Response:", data);
+
       if (response.ok) {
-
-        setMessage(
-          "✅ Registration Successful! Redirecting to Login..."
-        );
-
-        setForm({
-          name: "",
-          email: "",
-          phone: "",
-          password: "",
-          role: "patient",
-          dob: "",
-          gender: ""
-        });
+        setMessage("Registration Successful");
 
         setTimeout(() => {
           navigate("/login");
-        }, 1500);
-
+        }, 1000);
       } else {
-
         setMessage(
-          "❌ " + (data.detail || "Registration failed")
+          data.detail || "Registration Failed"
         );
-
       }
-
     } catch (error) {
-
-      console.log(error);
+      console.error("Register Error:", error);
 
       setMessage(
-        "❌ Backend Server Error. Please make sure FastAPI is running."
+        "Backend Server Error. Please make sure FastAPI is running."
       );
-
-    } finally {
-
-      setLoading(false);
-
     }
-
   };
 
   return (
+    <div className="register-container">
+      <div className="register-box">
 
-    <div className="register-page">
+        <h2>Register</h2>
 
-      <div className="register-card">
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-        <div className="register-icon">
-          🏥
-        </div>
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <h1>Create Account</h1>
+        <input
+          type="text"
+          placeholder="Enter Phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
 
-        <p className="register-subtitle">
-          Register for Smart Healthcare
-        </p>
+        <input
+          type="date"
+          value={dob}
+          onChange={(e) => setDob(e.target.value)}
+        />
 
-        <form onSubmit={handleRegister}>
-
-          {/* Name */}
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={form.name}
-            onChange={handleChange}
-            required
-          />
-
-          {/* Email */}
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-
-          {/* Phone */}
-
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={handleChange}
-            required
-          />
-
-          {/* Password */}
-
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            required
-            minLength="6"
-          />
-
-          {/* Role */}
-
-          <select
-            name="role"
-            value={form.role}
-            onChange={handleChange}
-            required
-          >
-
-            <option value="patient">
-              Patient
-            </option>
-
-            <option value="doctor">
-              Doctor
-            </option>
-
-            <option value="admin">
-              Admin
-            </option>
-
-          </select>
-
-          {/* Date of Birth */}
-
-          <input
-            type="date"
-            name="dob"
-            value={form.dob}
-            onChange={handleChange}
-            required
-          />
-
-          {/* Gender */}
-
-          <select
-            name="gender"
-            value={form.gender}
-            onChange={handleChange}
-            required
-          >
-
-            <option value="">
-              Select Gender
-            </option>
-
-            <option value="Male">
-              Male
-            </option>
-
-            <option value="Female">
-              Female
-            </option>
-
-            <option value="Other">
-              Other
-            </option>
-
-          </select>
-
-          <button
-            type="submit"
-            disabled={loading}
-          >
-
-            {loading
-              ? "Creating Account..."
-              : "Create Account"
-            }
-
-          </button>
-
-        </form>
-
-        {message && (
-
-          <div className="register-message">
-            {message}
-          </div>
-
-        )}
-
-        <div className="login-link">
-
-          Already have an account?
-
-          <button
-            type="button"
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </button>
-
-        </div>
-
-        <button
-          className="back-home"
-          onClick={() => navigate("/")}
+        <select
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
         >
-          ← Back to Home
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <input
+          type="password"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button onClick={handleRegister}>
+          Register
         </button>
 
+        {message && (
+          <p className="register-message">
+            {message}
+          </p>
+        )}
+
+        <p>
+          Already have an account?{" "}
+          <span
+            onClick={() => navigate("/login")}
+            style={{
+              color: "#2563eb",
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+          >
+            Login
+          </span>
+        </p>
+
       </div>
-
     </div>
-
   );
-
 }
 
 export default Register;
