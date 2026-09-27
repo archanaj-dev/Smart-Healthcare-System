@@ -38,7 +38,7 @@ function Register() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/auth/register",
+        "https://smart-healthcare-system-tkm2.onrender.com/auth/register",
         {
           method: "POST",
           headers: {

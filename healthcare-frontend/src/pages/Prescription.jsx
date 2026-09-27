@@ -27,7 +27,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/manage-doctor/list"
+        "https://smart-healthcare-system-tkm2.onrender.com/manage-doctor/list"
       );
 
       const data = await response.json();
@@ -47,7 +47,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/prescription/list"
+        "https://smart-healthcare-system-tkm2.onrender.com/prescription/list"
       );
 
       const data = await response.json();
@@ -78,7 +78,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/prescription/add",
+        "https://smart-healthcare-system-tkm2.onrender.com/prescription/add",
         {
           method: "POST",
           headers: {
@@ -134,7 +134,7 @@ function Prescription() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8000/prescription/delete/${id}`,
+        `https://smart-healthcare-system-tkm2.onrender.com/prescription/delete/${id}`,
         {
           method: "DELETE",
         }

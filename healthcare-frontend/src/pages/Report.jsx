@@ -16,7 +16,7 @@ function Report() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/report/list"
+        "https://smart-healthcare-system-tkm2.onrender.com/report/list"
       );
 
       const data = await response.json();
@@ -49,7 +49,7 @@ function Report() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8000/report/delete/${id}`,
+        `https://smart-healthcare-system-tkm2.onrender.com/report/delete/${id}`,
         {
           method: "DELETE"
         }

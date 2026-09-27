@@ -8,7 +8,7 @@ function Profile() {
 
         const email = localStorage.getItem("userEmail");
 
-        fetch(`http://127.0.0.1:8000/profile/${email}`)
+        fetch(`https://smart-healthcare-system-tkm2.onrender.com/profile/${email}`)
             .then(res => res.json())
             .then(data => setProfile(data));
 

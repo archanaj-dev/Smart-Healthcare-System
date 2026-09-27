@@ -29,7 +29,7 @@ function Appointment() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/doctor/list"
+        "https://smart-healthcare-system-tkm2.onrender.com/doctor/list"
       );
 
       const data = await response.json();
@@ -60,7 +60,7 @@ function Appointment() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/appointment/book",
+        "https://smart-healthcare-system-tkm2.onrender.com/appointment/book",
         {
           method: "POST",
           headers: {

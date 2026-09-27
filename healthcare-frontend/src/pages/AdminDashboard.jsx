@@ -20,22 +20,22 @@ function AdminDashboard() {
 
     try {
 
-      const patientRes = await fetch("http://127.0.0.1:8000/auth/users");
+      const patientRes = await fetch("https://smart-healthcare-system-tkm2.onrender.com/auth/users");
       const patientData = await patientRes.json();
 
-      const appointmentRes = await fetch("http://127.0.0.1:8000/appointment/list");
+      const appointmentRes = await fetch("https://smart-healthcare-system-tkm2.onrender.com/appointment/list");
       const appointmentData = await appointmentRes.json();
 
       let prescriptionData = [];
       let reportData = [];
 
       try {
-        const prescriptionRes = await fetch("http://127.0.0.1:8000/prescription/list");
+        const prescriptionRes = await fetch("https://smart-healthcare-system-tkm2.onrender.com/prescription/list");
         prescriptionData = await prescriptionRes.json();
       } catch {}
 
       try {
-        const reportRes = await fetch("http://127.0.0.1:8000/report/list");
+        const reportRes = await fetch("https://smart-healthcare-system-tkm2.onrender.com/report/list");
         reportData = await reportRes.json();
       } catch {}
 

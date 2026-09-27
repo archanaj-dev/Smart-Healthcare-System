@@ -13,7 +13,7 @@ function DoctorDashboard() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/doctor/appointments"
+        "https://smart-healthcare-system-tkm2.onrender.com/doctor/appointments"
       );
 
       const data = await response.json();
@@ -39,7 +39,7 @@ function DoctorDashboard() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8000/doctor/${action}/${id}`,
+        `https://smart-healthcare-system-tkm2.onrender.com/doctor/${action}/${id}`,
         {
           method: "PUT",
         }

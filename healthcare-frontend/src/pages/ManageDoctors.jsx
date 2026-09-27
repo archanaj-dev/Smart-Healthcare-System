@@ -19,7 +19,7 @@ function ManageDoctors() {
   const loadDoctors = async () => {
 
     const response = await fetch(
-      "http://127.0.0.1:8000/manage-doctor/list"
+      "https://smart-healthcare-system-tkm2.onrender.com/manage-doctor/list"
     );
 
     const data = await response.json();
@@ -41,7 +41,7 @@ function ManageDoctors() {
     e.preventDefault();
 
     const response = await fetch(
-      "http://127.0.0.1:8000/manage-doctor/add",
+      "https://smart-healthcare-system-tkm2.onrender.com/manage-doctor/add",
       {
         method: "POST",
         headers: {
@@ -70,7 +70,7 @@ function ManageDoctors() {
   const deleteDoctor = async (id) => {
 
     await fetch(
-      `http://127.0.0.1:8000/manage-doctor/delete/${id}`,
+      `https://smart-healthcare-system-tkm2.onrender.com/manage-doctor/delete/${id}`,
       {
         method: "DELETE"
       }

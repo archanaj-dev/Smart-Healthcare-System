@@ -15,7 +15,7 @@ function ManagePatients() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/manage-patient/list"
+        "https://smart-healthcare-system-tkm2.onrender.com/manage-patient/list"
       );
 
       const data = await response.json();
@@ -45,7 +45,7 @@ function ManagePatients() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:8000/manage-patient/delete/${id}`,
+        `https://smart-healthcare-system-tkm2.onrender.com/manage-patient/delete/${id}`,
         {
           method: "DELETE",
         }
