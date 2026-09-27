@@ -16,7 +16,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/auth/login",
+        "https://smart-healthcare-system-tkm2.onrender.com/auth/login",
         {
           method: "POST",
           headers: {
